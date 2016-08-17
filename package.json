@@ -7,6 +7,10 @@
     "test": "mocha --compilers js:babel-register",
     "coverage": "istanbul cover _mocha -- --compilers js:babel-register"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bobbrady/algorithms-with-es6.git"
+  },
   "keywords": [
     "algorithms",
     "data",
