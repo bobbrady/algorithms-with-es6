@@ -8,11 +8,12 @@ It provides the following features:
 * Unit tests with mocha
 * Test coverage metrics with instanbul
 * Latest modules used for all dependencies, including babel v6
+* JSDoc style comments used to document the code
 
 ## Usage
 ```
-git clone
-cd
+git clone git remote add origin https://github.com/bobbrady/lgorithms-with-es6.git
+cd algorithms-with-es6
 npm install
 gulp // Lint and transpile all ES6 code
 export LOG_LEVEL=debug // Optional, only do to see debug logging to stdout
