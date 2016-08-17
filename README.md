@@ -17,6 +17,6 @@ cd algorithms-with-es6
 npm install
 gulp // Lint and transpile all ES6 code
 export LOG_LEVEL=debug // Optional, only do to see debug logging to stdout
-npm test // RUn all unit tests
+npm test // Run all unit tests
 npm run coverage // Evaluate test coverage
 ```
