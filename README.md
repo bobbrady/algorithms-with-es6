@@ -12,7 +12,7 @@ It provides the following features:
 
 ## Usage
 ```
-git clone git remote add origin https://github.com/bobbrady/lgorithms-with-es6.git
+git clone git remote add origin https://github.com/bobbrady/algorithms-with-es6.git
 cd algorithms-with-es6
 npm install
 gulp // Lint and transpile all ES6 code
