@@ -2,11 +2,7 @@
 import gulp from 'gulp';
 import babel from 'gulp-babel';
 import eslint from 'gulp-eslint';
-/*
-const gulp = require('gulp');
-const babel = require('gulp-babel');
-const eslint = require('gulp-eslint');
-*/
+
 gulp.task('default', () => {
   // es6 linting
   gulp.src('src/**/*.js')
@@ -17,3 +13,7 @@ gulp.task('default', () => {
     .pipe(babel())
     .pipe(gulp.dest('dist'));
 });
+
+  // Uncomment this if you want hot transpilation while you develop code.
+  // You will need to keep the terminal where you run `gulp` open while you code.
+  // gulp.watch(['src/**/*.js'], ['default']);
