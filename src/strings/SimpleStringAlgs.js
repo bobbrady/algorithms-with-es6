@@ -13,12 +13,12 @@ class SimpleStringAlgs {
     }
   }
 
-/**
- * Reverses a string using built-in JavaScript functionality.
- *
- * @param {string} The string to reverse
- * @return {string The reversed string}
- */
+  /**
+   * Reverses a string using built-in JavaScript functionality.
+   *
+   * @param {string} The string to reverse
+   * @return {string The reversed string}
+   */
   static reverseWithBuiltIns(str) {
     this.validate(str);
     logger.debug(`Reversing string ${str}`);
@@ -29,6 +29,21 @@ class SimpleStringAlgs {
     return charArr.join('');
   }
 
+  /**
+   * Reverses a string without the use of built-in JavaScript functionality.
+   *
+   * @param {string} The string to reverse
+   * @return {string The reversed string}
+   */
+  static reverse(str) {
+    this.validate(str);
+    logger.debug(`Reversing string ${str}`);
+    let revStr = '';
+    for (let i = str.length - 1; i >= 0; i--) {
+      revStr += str.charAt(i);
+    }
+    return revStr;
+  }
 }
 
 export default SimpleStringAlgs;
