@@ -1,4 +1,3 @@
-
 import gulp from 'gulp';
 import babel from 'gulp-babel';
 import eslint from 'gulp-eslint';
@@ -14,6 +13,6 @@ gulp.task('default', () => {
     .pipe(gulp.dest('dist'));
 });
 
-  // Uncomment this if you want hot transpilation while you develop code.
-  // You will need to keep the terminal where you run `gulp` open while you code.
-  // gulp.watch(['src/**/*.js'], ['default']);
+// Uncomment this if you want hot transpilation while you develop code.
+// You will need to keep the terminal where you run `gulp` open while you code.
+gulp.watch(['src/**/*.js'], ['default']);
