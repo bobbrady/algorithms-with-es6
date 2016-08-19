@@ -44,6 +44,22 @@ class SimpleStringAlgs {
     }
     return revStr;
   }
+
+  /**
+   * Checks for palindromes
+   *
+   * @param {string} str, the string to Check.
+   * @return {boolean} true if palindrome, false otherwise.
+   */
+  static isPalindrome(str) {
+    this.validate(str);
+    for (let i = 0; i < str.length / 2; i++) {
+      if (str.charAt(i) !== str.charAt(str.length - 1 - i)) {
+        return false;
+      }
+    }
+    return true;
+  }
 }
 
 export default SimpleStringAlgs;
