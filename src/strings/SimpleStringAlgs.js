@@ -46,15 +46,18 @@ class SimpleStringAlgs {
   }
 
   /**
-   * Checks for palindromes
+   * Checks for palindromes.
+   *
+   * Ignores non-word characters and the underscore
    *
    * @param {string} str, the string to Check.
    * @return {boolean} true if palindrome, false otherwise.
    */
   static isPalindrome(str) {
     this.validate(str);
-    for (let i = 0; i < str.length / 2; i++) {
-      if (str.charAt(i) !== str.charAt(str.length - 1 - i)) {
+    const testStr = str.toLowerCase().replace(/\W/g, '').replace('_', '');
+    for (let i = 0; i < testStr.length / 2; i++) {
+      if (testStr.charAt(i) !== testStr.charAt(testStr.length - 1 - i)) {
         return false;
       }
     }

@@ -69,8 +69,14 @@ describe('SimpleStringAlgs', () => {
     it('Determines three letter word is not palindrome \'bba\'', () => {
       assert.isFalse(SimpleStringAlgs.isPalindrome('bba'));
     });
+    it('Determines four letter word is not palindrome \'nope\'', () => {
+      assert.isFalse(SimpleStringAlgs.isPalindrome('nope'));
+    });
     it('Determines empty string is palindrome \'\'', () => {
       assert.isTrue(SimpleStringAlgs.isPalindrome(''));
+    });
+    it('Determines \'A man, A plan, A canal, Panama\' is palindrome \'\'', () => {
+      assert.isTrue(SimpleStringAlgs.isPalindrome('A man, A plan, A canal, Panama'));
     });
     it('Throws an error on invalid input {foo: \'bar\'}', () => {
       const str = {
