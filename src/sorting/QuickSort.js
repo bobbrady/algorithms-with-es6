@@ -3,7 +3,8 @@ import logger from '../util/LogUtil';
 /**
  * Class QuickSort
  *
- * Implementation of the Quick Sort algorithm
+ * Implementation of the Quick Sort algorithm using the
+ * Hoare partition algorithm.
  */
 class QuickSort {
 
@@ -13,8 +14,7 @@ class QuickSort {
 
   static sort(arr, left, right) {
     const idx = this.partition(arr, left, right);
-    logger.debug(`Array: ${arr}, Left: ${left}, Right: ${right}, Pivot: ${idx}`);
-    if (left >= right) {
+    if (right <= left) {
       return;
     }
     this.sort(arr, left, idx);
@@ -23,26 +23,28 @@ class QuickSort {
 
   /* eslint no-param-reassign: 0 */
   static partition(arr, first, last) {
-    const pivot = arr[Math.floor((first + last) / 2)];
-    let leftI = first - 1;
-    let rightI = last + 1;
-    while (leftI <= rightI) {
-      while (arr[++leftI] < pivot);
-      while (arr[--rightI] > pivot);
-      if (leftI >= rightI) break;
-      const tmp = arr[leftI];
-      arr[leftI] = arr[rightI];
-      arr[rightI] = tmp;
+    // Protect against overflow by adding delta to first index
+    const pivot = arr[Math.floor(first + ((last - first) / 2))];
+    // Hoare algorithm: start outside bounds for cleaner loop code
+    let left = first - 1;
+    let right = last + 1;
+    while (left < right) {
+      while (arr[++left] < pivot);
+      while (arr[--right] > pivot);
+      if (left < right) {
+        this.swap(arr, left, right);
+      }
     }
-    return rightI;
+    logger.debug(`Before return: left => ${left}, right => ${right}`);
+    return right;
+  }
+
+  static swap(arr, i, j) {
+    const tmp = arr[i];
+    arr[i] = arr[j];
+    arr[j] = tmp;
   }
 
 }
-
-const arr = [6, 4, 2, 1, 1, 9, 4, 2, 0, 6];
-logger.debug(`Arr before sort: ${arr}`);
-QuickSort.quickSort(arr);
-logger.debug(`Arr after sort: ${arr}`);
-
 
 export default QuickSort;
