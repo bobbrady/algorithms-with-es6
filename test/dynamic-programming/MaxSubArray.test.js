@@ -1,6 +1,6 @@
 /* eslint-env mocha */
 import chai from 'chai';
-import MaxSubArray from '../src/dynamic-programming/MaxSubArray';
+import MaxSubArray from '../../src/dynamic-programming/MaxSubArray';
 
 const assert = chai.assert;
 

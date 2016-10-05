@@ -4,7 +4,7 @@
   "description": "Basic algorithms and data structures implemented with es6",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --compilers js:babel-register",
+    "test": "mocha --recursive --compilers js:babel-register",
     "coverage": "istanbul cover _mocha -- --compilers js:babel-register"
   },
   "repository": {

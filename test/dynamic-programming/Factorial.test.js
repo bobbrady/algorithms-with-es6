@@ -1,6 +1,6 @@
 /* eslint-env mocha */
 import chai from 'chai';
-import Factorial from '../src/dynamic-programming/Factorial';
+import Factorial from '../../src/dynamic-programming/Factorial';
 
 const assert = chai.assert;
 

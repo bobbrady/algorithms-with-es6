@@ -1,6 +1,6 @@
 /* eslint-env mocha */
 import chai from 'chai';
-import SimpleStringAlgs from '../src/strings/SimpleStringAlgs';
+import SimpleStringAlgs from '../../src/strings/SimpleStringAlgs';
 
 const assert = chai.assert;
 
@@ -26,7 +26,9 @@ describe('SimpleStringAlgs', () => {
     });
     it('Throws an error on invalid input {foo: \'bar\'}', () => {
       const err = 'Input [object Object] was not a string primitive or String object.';
-      assert.throws(() => SimpleStringAlgs.reverseWithBuiltIns({ foo: 'bar' }), err);
+      assert.throws(() => SimpleStringAlgs.reverseWithBuiltIns({
+        foo: 'bar'
+      }), err);
     });
   });
   describe('SimpleStringAlgs.reverse', () => {
@@ -50,7 +52,9 @@ describe('SimpleStringAlgs', () => {
     });
     it('Throws an error on invalid input {foo: \'bar\'}', () => {
       const err = 'Input [object Object] was not a string primitive or String object.';
-      assert.throws(() => SimpleStringAlgs.reverse({ foo: 'bar' }), err);
+      assert.throws(() => SimpleStringAlgs.reverse({
+        foo: 'bar'
+      }), err);
     });
   });
   describe('SimpleStringAlgs.isPalindrome', () => {

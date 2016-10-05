@@ -1,17 +1,17 @@
 /* eslint-env mocha */
 import chai from 'chai';
-import MergeSort from '../src/sorting/MergeSort';
-import ArrayUtil from '../src/util/ArrayUtil';
-import logger from '../src/util/LogUtil';
+import QuickSort from '../../src/sorting/QuickSort';
+import ArrayUtil from '../../src/util/ArrayUtil';
+import logger from '../../src/util/LogUtil';
 
 const assert = chai.assert;
 let randArr = [];
 
-describe('MergeSort', () => {
+describe('QuickSort', () => {
   beforeEach(() => {
     randArr = ArrayUtil.randomIntArray(100, 100);
     logger.debug(`Random Array to be sorted: ${randArr}`);
-    MergeSort.mergeSort(randArr);
+    QuickSort.quickSort(randArr);
     logger.debug(`Sorted Array: ${randArr}`);
   });
   it('Sorts random array of size 100: Test 1', () => {
